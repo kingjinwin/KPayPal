@@ -1,4 +1,4 @@
 KPayPal
 =======
 
-PayPal
+PayPal demo for expressing checkout
