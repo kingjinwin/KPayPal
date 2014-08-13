@@ -48,7 +48,6 @@ if ( $PaymentOption == "PayPal" )
         */
 
         $transactionId      = $resArray["PAYMENTINFO_0_TRANSACTIONID"]; // ' Unique transaction ID of the payment. Note:  If the PaymentAction of the request was Authorization or Order, this value is your AuthorizationID for use with the Authorization & Capture APIs. 
-        echo $transactionId;
         $transactionType    = $resArray["PAYMENTINFO_0_TRANSACTIONTYPE"]; //' The type of transaction Possible values: l  cart l  express-checkout 
         $paymentType        = $resArray["PAYMENTINFO_0_PAYMENTTYPE"];  //' Indicates whether the payment is instant or delayed. Possible values: l  none l  echeck l  instant 
         $orderTime          = $resArray["PAYMENTINFO_0_ORDERTIME"];  //' Time/date stamp of payment
@@ -108,4 +107,49 @@ if ( $PaymentOption == "PayPal" )
     }
 }       
         
+$invoice = 'K'.rand(100,999);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kelvin Jin's Store</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" style="width:300px" >
+    <h3>Invoice Review</h3>
+        <div class="table-responsive">
+          <table class="table">
+          <tr>
+            <th>Invoice</td>
+            <th>Transaction</td>
+            <th>Amount</td>
+          </tr>
+          <tr>
+            <td><?php echo $invoice; ?></td>
+            <td><?php echo $transactionId; ?></td>
+            <td><?php echo $amt;?></td>
+          </tr>
+          </table>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.9.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

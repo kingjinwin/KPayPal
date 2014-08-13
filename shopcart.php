@@ -17,22 +17,29 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container" style="width:300px" >
-    <h3>PayPal Test!</h3>
-    <form action='shopcart.php' METHOD='POST' role="form">
-    <img src="resources/images/apple-full2.jpg" alt="apple" class="img-thumbnail">
+    <div class="container" style="width:500px" >
+    <h3>PayPal Test--Shop Cart!</h3>
+    <form action='expresscheckout.php' METHOD='POST' role="form" class="form-horizontal">
     <div class="form-group">
-        <label for="amt">Amount:</label>
-        <input name='amt'type="text" id="amt" class="form-control" value="10" readonly />
+        <img src="resources/images/apple-thumb.jpg" alt="apple" class="img-thumbnail" style="float:left;">
+        <label for="amt" class="col-sm-2 control-label" style="margin-top:26px;" >Amount:</label>
+        <div class="col-sm-2" style="margin-top:16px;">
+            <input name='amt'type="text" id="amt" class="form-control" value="10" readonly >
+        </div>
     </div>
-    <input type="hidden" name="sku" value="sku-1">
-    <button type="submit" class="btn btn-success">Add to cart</button>
+     <div class="form-group">
+    <input type='image' name='submit' id="img1" onclick="changeimg();"  src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' border='0' align='top' alt='Check out with PayPal'/>
+    </div>
     </form>
     </div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.9.1.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+    function changeimg(){
+       $("#img1").attr("src","resources/images/placeordering.gif"); 
+    }
+    </script>
   </body>
 </html>
